@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(45deg, #ff93db, #91e595);
+}
+
+.letters {
+    perspective: 1000px;
+}
+
+.letter {
+    overflow: hidden;
+    display: inline-block;
+    user-select: none;
+    line-height: 1;
+    font-size: 5rem;
+    cursor: pointer;
+    margin: 0.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.letter.active {
+    animation: jump 1s ease-in-out;
+    transform-origin: bottom left;
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(0, 0) rotate(180deg);
+    }
+    25% {
+        transform: scale(2) translate(0, -150px);
+    }
+    75% {
+        transform: scale(1.1) translate(0, 200px);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}

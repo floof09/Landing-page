@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background: linear-gradient(45deg, #cdb4db, #ffd3b6); /* Soft purple gradient */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    position: relative;
+    height: 5rem;
+}
+
+.search{
+    background-color: transparent;
+    border: 0;
+    transition: width .5s ease-in-out;
+    height: 3rem;
+    width: 3rem;
+    padding: .5rem;
+    font-size: 1rem;
+    border-radius: 50%; /* Make it round */
+    border: 2px solid #7b68ee; /* Soft purple border */
+    outline: none;
+}
+
+button{
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    width: 3rem;
+    transition: background-color .5s ease-in-out;
+    outline: none;
+    border-radius: 50%; /* Make it round */
+    background-color: #fff; /* White background */
+}
+
+button.active{
+    margin-left: 0.5rem;
+}
+
+.fa-times.active{
+    opacity: 1;
+}
+
+.fa-search.active{
+    opacity: 0;
+}
+
+/* Colors and styles for active state */
+.container.active .search{
+    width: 20rem;
+}
+
+.container.active button{
+    transform: translate(20rem);
+    background-color: #9370db; /* Light purple background */
+}
